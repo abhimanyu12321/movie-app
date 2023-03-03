@@ -26,7 +26,7 @@ const Movie = () => {
     }
 
     return (
-        <div className="bg-black overflow-hidden">
+        <div className="bg-black overflow-hidden min-h-screen">
             <Header />
             <div className={styles.movie}>
                 <div className={styles.movie__intro}>
