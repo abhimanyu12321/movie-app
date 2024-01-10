@@ -10,20 +10,19 @@ import { Carousel } from 'react-responsive-carousel';
 import Link from 'next/link';
 import MovieList from '@/components/movielist';
 import { useEffect, useState } from 'react'
+import { useQuery } from '@tanstack/react-query';
 
 
 export default function Home() {
   const [popularMovies, setPopularMovies] = useState([])
 
 
+  const fetchData = async () => {
+    const response = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US');
+    const data = await response.json();
+    return data;
+  };
 
-  useEffect(() => {
-    fetch("https://api.themoviedb.org/3/movie/popular?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US")
-      .then(res => res.json())
-      .then(data => setPopularMovies(data.results))
-  }, [])
-
-  // console.log(popularMovies)
   return (
     <div className='min-h-screen bg-black overflow-hidden'>
       <Head>
@@ -44,7 +43,7 @@ export default function Home() {
           showStatus={false}
         >
           {
-            popularMovies.map((movie) => {
+            popularMovies && popularMovies.map((movie) => {
               // eslint-disable-next-line react/jsx-key
               return <Link style={{ textDecoration: "none", color: "white" }} href={`/movie/${movie.id}`} key={movie.id} >
                 <div className={styles.posterImage}>

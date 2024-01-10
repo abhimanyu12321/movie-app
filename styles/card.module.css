@@ -31,7 +31,7 @@
   height: 290px;
   display: flex;
   flex-direction: column;
-  width: 85%;
+  width: 100%;
   justify-content: flex-end;
   background-image: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0, 1));
   opacity: 0;
@@ -55,6 +55,9 @@
 
 .card__rating {
   float: right;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .card__description {
