@@ -53,8 +53,7 @@ const Movie = () => {
                                     currentMovieDetail && currentMovieDetail.genres
                                         ?
                                         currentMovieDetail.genres.map(genre => (
-                                            <><span className={styles.movie__genre} id={genre.id}>{genre.name}</span></>
-                                        ))
+                                            <><span className={styles.movie__genre} id={genre.id}>{genre.name}</span></>))
                                         :
                                         ""
                                 }

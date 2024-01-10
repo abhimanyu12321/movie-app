@@ -23,6 +23,7 @@ export default function Home() {
   }, []);
 
   // console.log(popularMovies)
+
   return (
     <div className="min-h-screen bg-black overflow-hidden">
       <Head>
@@ -41,6 +42,7 @@ export default function Home() {
           infiniteLoop={true}
           showStatus={false}
         >
+      
           {popularMovies.map((movie) => {
             // eslint-disable-next-line react/jsx-key
             return (
@@ -49,6 +51,7 @@ export default function Home() {
                 href={`/movie/${movie.id}`}
                 key={movie.id}
               >
+
                 <div className={styles.posterImage}>
                   <img
                     src={`https://image.tmdb.org/t/p/original${
