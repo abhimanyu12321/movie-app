@@ -4,7 +4,7 @@
 import Head from 'next/head';
 import Header from '@/components/header';
 import React from 'react';
-import styles from '../styles/home.module.css';
+import styles from '../styles/Home.module.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 import Link from 'next/link';
