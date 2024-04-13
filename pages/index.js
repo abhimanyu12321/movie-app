@@ -42,7 +42,7 @@ export default function Home() {
           infiniteLoop={true}
           showStatus={false}
         >
-      
+
           {popularMovies.map((movie) => {
             // eslint-disable-next-line react/jsx-key
             return (
@@ -54,9 +54,8 @@ export default function Home() {
 
                 <div className={styles.posterImage}>
                   <img
-                    src={`https://image.tmdb.org/t/p/original${
-                      movie && movie.backdrop_path
-                    }`}
+                    src={`https://image.tmdb.org/t/p/original${movie && movie.backdrop_path
+                      }`}
                     alt="Movie_poster"
                   />
                 </div>
